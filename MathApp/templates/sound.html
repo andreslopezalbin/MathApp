@@ -1,0 +1,21 @@
+{% load static %}
+
+
+<audio id="audioSuccess"  src="{% static 'sounds/smb_jump-super.wav' %}" ></audio>
+<audio id="audioFail"  src="{% static 'sounds/smb_mariodie.wav' %}"></audio>
+
+<i id="sound" class="fas fa-volume-up fa-volume-off fa-4x"></i>
+
+<script>
+    var sound = true;
+
+    $('#sound').click(function () {
+        $("#sound").toggleClass('fa-volume-up');
+        if (sound === true) {
+            sound = false;
+        } else {
+            sound = true;
+        }
+
+    });
+</script>

@@ -1,0 +1,76 @@
+
+.background {
+    background: darkslateblue;
+}
+
+.roboto {
+    font-family: 'Roboto', sans-serif;
+    font-size: 300%;
+    color: white;
+}
+
+.progress .progress-bar {
+    -webkit-transition: none !important;
+    transition: none !important;
+}
+
+.true {
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+
+}
+
+.button {
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+.button.true {
+    background-color: #4CAF50;
+
+}
+
+.button.true:hover {
+    background-color: #3e8e41
+}
+
+.button.true:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.button.false {
+    background-color: darkred;
+}
+
+.button.false:hover {
+    background-color: firebrick
+}
+
+.button.false:active {
+    background-color: firebrick;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.fa-play, .fa-volume-up, .fa-volume-off {
+    color: white;
+}
+
+.modal-body {
+    font-size: 200%;
+}
