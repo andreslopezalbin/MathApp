@@ -107,11 +107,10 @@ STATIC_URL = '/static/'
 # Uncomment STATICFILES_DIRS and comment STATIC_ROOT for local environment
 
 """"
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+"""
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
-"""
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 SESSION_ENGINE = "django.contrib.sessions.backends.cache"
