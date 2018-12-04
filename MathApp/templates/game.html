@@ -5,19 +5,9 @@
 
 {% block content %}
     <div class="container-fluid background">
-
         <div class="row ">
-            <div class="col-md-12">
-                <div class="row">
-                    <div class="col-md-6">
-                        {% include 'sound.html' %}
-
-                    </div>
-                    <div class="col-md-6">
-                        <span class="float-right roboto"> &nbsp;Hits: {{ request.session.current }}</span>
-                        <span class="float-right roboto"> Best: {{ request.session.best }} </span>
-                    </div>
-                </div>
+            <div class="col-md-6">
+                {% include 'sound.html' %}
             </div>
         </div>
     </div>
@@ -26,6 +16,11 @@
     <div id="game-div">
         <div class="container-fluid background">
             <div class="row">
+
+                <div class="col-md-6 float-right" style="position: absolute;top:0;right:0;left:auto;">
+                    <span class="float-right roboto"> &nbsp;Hits: {{ request.session.current }}</span>
+                    <span class="float-right roboto"> Best: {{ request.session.best }} </span>
+                </div>
                 <div class="col-md-10 mx-auto">
                     <div class="progress">
                         <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:100%"></div>
@@ -90,7 +85,7 @@
             });
 
 
-            const canShowModal = true;
+            var canShowModal = true;
 
             function check_answer(selected) {
                 if (selected === {{ res }}) {
@@ -119,16 +114,16 @@
             }
 
 
-            const targetNode = document.getElementsByClassName('progress-bar')[0];
+            var targetNode = document.getElementsByClassName('progress-bar')[0];
 
             // Options for the observer (which mutations to observe)
-            const config = {attributes: true};
+            var config = {attributes: true};
 
             // Callback function to execute when mutations are observed
-            let callback = function (mutationsList, observer) {
+            var callback = function (mutationsList, observer) {
                 for (var mutation of mutationsList) {
                     if (mutation.type === 'attributes') {
-                        const {width} = targetNode.style;
+                        var {width} = targetNode.style;
 
                         if (width === '0%' && canShowModal) {
                             $('#failmodal').modal('show')
@@ -139,7 +134,7 @@
                 }
             };
             // Create an observer instance linked to the callback function
-            let observer = new MutationObserver(callback);
+            var observer = new MutationObserver(callback);
 
             // Start observing the target node for configured mutations
             observer.observe(targetNode, config);
